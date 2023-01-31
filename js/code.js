@@ -39,6 +39,15 @@ function displayTasks() {
     document.getElementById("task-list").innerHTML = tasksList;
 }
 
+// Function to retrieve the tasks from localStorage
+
+function retrieveTasks() {
+    const storedTasks = localStorage.getItem("tasks");
+    if (storedTasks) {
+        tasks = JSON.parse(storedTasks);
+    }
+    displayTasks();
+}
 
 // Event listener to handle the form submission 
 
@@ -46,6 +55,10 @@ document.getElementById("add-task").addEventListener("submit", function (event) 
     event.preventDefault();
     addTask();
 });
+
+// Call the retrieveTasks function when the page loads
+
+window.onload = retrieveTasks;
 
 
 // clear tasks 
