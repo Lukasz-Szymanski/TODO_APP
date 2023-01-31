@@ -66,6 +66,7 @@ window.onload = retrieveTasks;
 function clearTasks() {
     tasks = [];
     displayTasks();
+    localStorage.removeItem("tasks");
 }
 const clearButton = document.getElementById("clear-tasks");
 clearButton.addEventListener("click", clearTasks);
