@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* background */
+body {
+	background-color: #077607;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+    
+/* container and form input */
+.container {
+	background-color: #094609;
+	width: 35%;
+	height: 70%;
+	margin: 0 auto;
+	border-radius: 10px;
+	padding: 10px;
+	overflow: auto;
+}
+
+#task-list {
+	color: white;
+	margin: 20px;
+}
+
+form {
+	height: fit-content;
+	display: flex;
+	flex-direction: column;
+}
+
+input {
+	height: 1.5rem;
+	font-size: 15px;
+	font-family: 'Times New Roman';
+}
+
+button {
+	width: 25%;
+	align-self: center;
+	margin-top: 10px;
+	cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+/* Responsive Design */
+
+@media only screen and (max-width: 768px)  {
+	.container {
+		width: 80vh;
+	}
+}
+
+
+
+@media only screen and (max-width: 425px) and (min-width: 320px) {
+	.container {
+		width: 40vh;
+	}
+
+	button {
+		width: fit-content;
+	}
+}
