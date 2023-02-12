@@ -1,8 +1,12 @@
 // Define the task object constructor
 
-function Task(description) {
-    this.description = description;
-    this.completed = false;
+class Task {
+    constructor(description, date, time) {
+        this.description = description;
+        this.completed = false;
+        this.date = date;
+        this.time = time;
+    }
 }
 
 
@@ -18,9 +22,13 @@ displayTasks();
 
 function addTask() {
     const taskInput = document.getElementById("task-input").value;
+    const dateInput = document.getElementById("date-input").value;
+    const timeInput = document.getElementById("time-input").value;
     document.getElementById("task-input").value = "";
-    const newTask = new Task(taskInput.value);
-    tasks.push(taskInput);
+    document.getElementById("date-input").value = "";
+    document.getElementById("time-input").value = "";
+    const newTask = new Task(taskInput, dateInput, timeInput);
+    tasks.push(newTask);
     localStorage.setItem("tasks", JSON.stringify(tasks));
     displayTasks();
 }
@@ -34,10 +42,15 @@ function addTask() {
 function displayTasks() {
     let tasksList = "";
     for (let i = 0; i < tasks.length; i++) {
-        tasksList += `<li>${tasks[i]}</li>`;
+        tasksList += `<li>${tasks[i].description} ${tasks[i].date} ${tasks[i].time}</li>`;
     }
-    document.getElementById("task-list").innerHTML = tasksList;
+    const taskListElement = document.getElementById("task-list");
+    if (taskListElement) {
+        taskListElement.innerHTML = tasksList;
+    }
 }
+
+
 
 // Function to retrieve the tasks from localStorage
 
@@ -70,4 +83,3 @@ function clearTasks() {
 }
 const clearButton = document.getElementById("clear-tasks");
 clearButton.addEventListener("click", clearTasks);
-
