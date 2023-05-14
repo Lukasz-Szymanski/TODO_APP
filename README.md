@@ -17,4 +17,4 @@ _No additional frameworks were used._
 
 
 ### Live demo: 
-https://siemabrokul.github.io/TODO_APP/
+https://lukasz-szymanski.github.io/TODO_APP/
